@@ -1,0 +1,92 @@
+{
+  "chunks": [
+    {
+      "id": "oso-lang:src/compiler.ts:0",
+      "file": "src/compiler.ts",
+      "repo": "oso-lang",
+      "content": "// Oso-lang Compiler - Level 2 of 7-Layer Stack\n\n/**\n * Oso-lang is a smart contract language with:\n * - Type system based on Odù (Yorùbá divination)\n * - @genesisFlawToken for initialization\n * - Compiled to opcodes for Techgnosis VM\n * - Support for inheritance locks and tithe routing\n */\n\ninterface Token {\n  name: string;\n  symbol: string;\n  decimals: number;\n  totalSupply: bigint;\n}\n\nclass GenesisFlawToken implements Token {\n  name = '@genesisFlawToken';\n  symbol = 'GFT';\n  decimals = 18;\n  totalSupply = BigInt('1000000000000000000000');\n  \n  // Èjì Ogbe (First Odù) mapping\n  odùNumber = 1;\n  \n  constructor() {\n    console.log('🌱 Genesis Flaw Token initialized');\n  }\n  \n  mint(recipient: string, amount: bigint): void {\n    console.log(`🔨 Minting ${amount} GFT to ${recipient}`);\n    // Minting logic with Àṣẹ validation\n  }\n  \n  burn(amount: bigint): void {\n    console.log(`🔥 Burning ${amount} GFT`);\n  }\n}\n\n// Type system based on Odù\ntype OduType = \n  | 'eji-ogbe' \n  | 'oyeku' \n  | 'iwori' \n  | 'idi' \n  | 'ishe' \n  | 'ofun'\n  | 'owonrin'\n  | 'obara';",
+      "startLine": 1,
+      "endLine": 50,
+      "language": "typescript"
+    },
+    {
+      "id": "oso-lang:src/compiler.ts:50",
+      "file": "src/compiler.ts",
+      "repo": "oso-lang",
+      "content": "\ninterface SmartContract {\n  name: string;\n  oduType: OduType;\n  titheRate: number; // 3.69%\n  lockDays: number; // 7-year = 2555 days\n}\n\n// Compiler output\nfunction compile(sourceCode: string): string {\n  console.log('🔤 Compiling Oso-lang source to VM opcodes...');\n  \n  // Parses @impact tokens\n  // Validates Àṣẹ (sacred power)\n  // Generates Techgnosis VM bytecode\n  \n  return 'GENESIS\\nLOAD_SEED\\nVALIDATE_ASE\\nMINT_GENESIS';\n}\n\nexport { GenesisFlawToken, compile, OduType, SmartContract };\n",
+      "startLine": 51,
+      "endLine": 71,
+      "language": "typescript"
+    },
+    {
+      "id": "osovm:src/wallet.ts:0",
+      "file": "src/wallet.ts",
+      "repo": "osovm",
+      "content": "// OsoVM - Wallet Derivation - Level 5 of 7-Layer Stack\n\n/**\n * 1440 Soul-Bound Wallet Derivation\n * - BIPỌ̀N39 seed derivation\n * - Council of 12 Lineages (rotating sign-off)\n * - Inheritance locks (11.11% APY, 7 years)\n * - 1440 sacred wallet addresses\n */\n\ninterface WalletDerivation {\n  seed: string;\n  path: string;\n  address: string;\n  yield: number;\n  locked: boolean;\n}\n\n// Go FFI stub (real implementation in Go)\nclass WalletFFI {\n  // Foreign Function Interface to Go implementation\n  // Handles BIP39 + BIPỌ̀N39 hybrid derivation\n  \n  derive1440Wallets(seed: string): WalletDerivation[] {\n    console.log('🔑 Deriving 1440 wallets from BIPỌ̀N39 seed...');\n    \n    const wallets: WalletDerivation[] = [];\n    \n    for (let i = 0; i < 1440; i++) {\n      wallets.push({\n        seed: seed,\n        path: `m/44'/60'/${i}'`,\n        address: `0x${Math.random().toString(16).slice(2)}`,\n        yield: 0.1111, // 11.11% APY\n        locked: true // 7-year lock\n      });\n    }\n    \n    return wallets;\n  }\n  \n  getCouncilLineages(): string[] {\n    // 12 rotating council lineages for sign-off\n    return [\n      'Lineage 1: Èjì Ogbe Guardian',\n      'Lineage 2: Oyèkú Keeper',\n      'Lineage 3: Ìwòri Protector',\n      'Lineage 4: Ìdí Anchor',\n      'Lineage 5: Ìshé Sculptor',\n      'Lineage 6: Ófun Creator',",
+      "startLine": 1,
+      "endLine": 50,
+      "language": "typescript"
+    },
+    {
+      "id": "osovm:src/wallet.ts:50",
+      "file": "src/wallet.ts",
+      "repo": "osovm",
+      "content": "      'Lineage 7: Ọ̀wọ́nrín Messenger',\n      'Lineage 8: Ọ̀bàrà Warrior',\n      'Lineage 9: Òkànrán Opener',\n      'Lineage 10: Ògúndá Warrior Path',\n      'Lineage 11: Ọ̀sá Leader',\n      'Lineage 12: Ìká Transformer'\n    ];\n  }\n}\n\n// Tithe routing from wallet\ninterface TitheAllocation {\n  treasury: number; // 50%\n  inheritance: number; // 25%\n  council: number; // 15%\n  void: number; // 10%\n}\n\nfunction allocateTithe(transactionAmount: bigint): TitheAllocation {\n  const tithe = transactionAmount * BigInt(369) / BigInt(10000); // 3.69%\n  \n  return {\n    treasury: Number(tithe * BigInt(50) / BigInt(100)),\n    inheritance: Number(tithe * BigInt(25) / BigInt(100)),\n    council: Number(tithe * BigInt(15) / BigInt(100)),\n    void: Number(tithe * BigInt(10) / BigInt(100))\n  };\n}\n\nexport { WalletFFI, WalletDerivation, TitheAllocation, allocateTithe };\n",
+      "startLine": 51,
+      "endLine": 81,
+      "language": "typescript"
+    },
+    {
+      "id": "techgnosis:src/tithe.ts:0",
+      "file": "src/tithe.ts",
+      "repo": "techgnosis",
+      "content": "// Techgnosis Tithe Distribution - Level 3 of 7-Layer Stack\n\n/**\n * Tithe Flow (3.69% of every transaction)\n * - 50% to Treasury (shrines + robots)\n * - 25% to 1440 Inheritance Vaults (11.11% APY)\n * - 15% to Council + Entropy Pool\n * - 10% to Burn Void (deflationary)\n */\n\ninterface TitheFlow {\n  treasury: {\n    percent: number;\n    amount: bigint;\n    destination: string;\n  };\n  inheritance: {\n    percent: number;\n    amount: bigint;\n    destination: string;\n    apy: number;\n    lockDays: number;\n  };\n  council: {\n    percent: number;\n    amount: bigint;\n    entropy: bigint;\n  };\n  void: {\n    percent: number;\n    amount: bigint;\n    burned: boolean;\n  };\n}\n\nclass TitheRouter {\n  private titheRate = 0.0369; // 3.69%\n  \n  calculateTithe(transactionAmount: bigint): TitheFlow {\n    const tithe = transactionAmount * BigInt(369) / BigInt(10000);\n    \n    return {\n      treasury: {\n        percent: 50,\n        amount: tithe * BigInt(50) / BigInt(100),\n        destination: 'shrines'\n      },\n      inheritance: {\n        percent: 25,\n        amount: tithe * BigInt(25) / BigInt(100),",
+      "startLine": 1,
+      "endLine": 50,
+      "language": "typescript"
+    },
+    {
+      "id": "techgnosis:src/tithe.ts:50",
+      "file": "src/tithe.ts",
+      "repo": "techgnosis",
+      "content": "        destination: '1440-vaults',\n        apy: 11.11,\n        lockDays: 2555\n      },\n      council: {\n        percent: 15,\n        amount: tithe * BigInt(15) / BigInt(100),\n        entropy: tithe * BigInt(5) / BigInt(100)\n      },\n      void: {\n        percent: 10,\n        amount: tithe * BigInt(10) / BigInt(100),\n        burned: true\n      }\n    };\n  }\n  \n  // Sabbath enforcement (Saturdays)\n  isSabbath(date: Date): boolean {\n    return date.getDay() === 6; // Saturday = 6\n  }\n  \n  enforceNoTransactions(date: Date): boolean {\n    if (this.isSabbath(date)) {\n      console.log('📿 Sabbath freeze - no transactions allowed');\n      return false;\n    }\n    return true;\n  }\n}\n\n// Inheritance vault with 7-year lock\nclass InheritanceVault {\n  address: string;\n  owner: string;\n  balance: bigint = BigInt(0);\n  lockedUntil: Date;\n  apy: number = 11.11;\n  \n  constructor(owner: string, lockDays: number = 2555) {\n    this.owner = owner;\n    this.lockedUntil = new Date(Date.now() + lockDays * 24 * 60 * 60 * 1000);\n    this.address = `0x${Math.random().toString(16).slice(2)}`;\n  }\n  \n  deposit(amount: bigint): void {\n    if (this.isLocked()) {\n      throw new Error('Vault is locked');\n    }\n    this.balance += amount;",
+      "startLine": 51,
+      "endLine": 100,
+      "language": "typescript"
+    },
+    {
+      "id": "techgnosis:src/tithe.ts:100",
+      "file": "src/tithe.ts",
+      "repo": "techgnosis",
+      "content": "    console.log(`💎 Deposited ${amount} to inheritance vault`);\n  }\n  \n  withdraw(): bigint {\n    if (this.isLocked()) {\n      throw new Error('Vault is locked until ' + this.lockedUntil.toISOString());\n    }\n    const amount = this.balance;\n    this.balance = BigInt(0);\n    return amount;\n  }\n  \n  isLocked(): boolean {\n    return Date.now() < this.lockedUntil.getTime();\n  }\n  \n  getYield(): bigint {\n    const daysHeld = Math.floor(\n      (Date.now() - (this.lockedUntil.getTime() - 2555 * 24 * 60 * 60 * 1000)) / \n      (24 * 60 * 60 * 1000)\n    );\n    const yearFraction = daysHeld / 365;\n    return BigInt(Math.floor(Number(this.balance) * this.apy * yearFraction / 100));\n  }\n}\n\nexport { TitheRouter, TitheFlow, InheritanceVault };\n",
+      "startLine": 101,
+      "endLine": 128,
+      "language": "typescript"
+    },
+    {
+      "id": "ifascript:src/entropy.ts:0",
+      "file": "src/entropy.ts",
+      "repo": "ifascript",
+      "content": "// Ifascript Entropy Oracle - Level 4 of 7-Layer Stack\n\n/**\n * Entropy Oracle for Technosis\n * - Random number generation\n * - Prophecy engine based on Odù divination\n * - Cryptographically secure randomness\n */\n\ninterface EntropySource {\n  seed: bigint;\n  entropy: bigint;\n  timestamp: Date;\n  source: string;\n}\n\nclass EntropyOracle {\n  private seeds: EntropySource[] = [];\n  \n  /**\n   * Generate cryptographically secure random number\n   * Range: 0 to max\n   */\n  generateEntropy(max: number = 1000000): bigint {\n    const crypto = require('crypto');\n    const randomBytes = crypto.randomBytes(32);\n    const entropy = BigInt('0x' + randomBytes.toString('hex')) % BigInt(max);\n    \n    this.seeds.push({\n      seed: entropy,\n      entropy: entropy,\n      timestamp: new Date(),\n      source: 'crypto'\n    });\n    \n    return entropy;\n  }\n  \n  /**\n   * Prophecy engine - map entropy to Odù\n   * 256 possible Odù combinations\n   */\n  predictOdu(entropy: bigint): string {\n    const odus = [\n      'Èjì Ogbe',     // 1 - Beginning\n      'Oyèkú',        // 2 - Death\n      'Ìwòrì',        // 3 - Mystery\n      'Ìdí',          // 4 - Foundation\n      'Ìshé',         // 5 - Wealth\n      'Ófun',         // 6 - Prosperity",
+      "startLine": 1,
+      "endLine": 50,
+      "language": "typescript"
+    },
+    {
+      "id": "ifascript:src/entropy.ts:50",
+      "file": "src/entropy.ts",
+      "repo": "ifascript",
+      "content": "      'Ọ̀wọ́nrín',     // 7 - Messenger\n      'Ọ̀bàrà',        // 8 - Warrior\n      'Òkànrán',      // 9 - Opener\n      'Ògúndá',       // 10 - Iron Path\n      'Ọ̀sá',         // 11 - Leader\n      'Ìká',          // 12 - Transformer\n      'Àbíkú',        // 13 - Reborn\n      'Ìfá'           // 14 - Divination\n    ];\n    \n    const index = Number(entropy % BigInt(odus.length));\n    return odus[index];\n  }\n  \n  /**\n   * Sabbath entropy freeze\n   * No entropy generation on Saturdays\n   */\n  canGenerateEntropy(date: Date = new Date()): boolean {\n    const dayOfWeek = date.getDay();\n    if (dayOfWeek === 6) { // Saturday\n      console.log('📿 Entropy frozen on Sabbath');\n      return false;\n    }\n    return true;\n  }\n  \n  /**\n   * 1440 Number significance\n   * - 1440 = minutes in a day\n   * - 1440 = wallets in inheritance\n   * - 1440 = sacred number\n   */\n  get1440Significance(): number {\n    return 1440;\n  }\n}\n\n// Divination helper\nfunction performDivination(entropy: bigint): string {\n  const oracle = new EntropyOracle();\n  const odu = oracle.predictOdu(entropy);\n  return `Divination: ${odu} (entropy: ${entropy.toString()})`;\n}\n\nexport { EntropyOracle, EntropySource, performDivination };\n",
+      "startLine": 51,
+      "endLine": 97,
+      "language": "typescript"
+    }
+  ],
+  "timestamp": "2026-01-22T06:28:26.184Z",
+  "repos": [
+    "oso-lang",
+    "osovm",
+    "techgnosis",
+    "ifascript"
+  ]
+}
